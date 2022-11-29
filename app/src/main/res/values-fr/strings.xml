@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appName "Top Drivers">
+    <!ENTITY appNamealone "Top Drivers">
+    <!ENTITY appNameCaps "TOP DRIVERS">
+    <!ENTITY ride "ride">
+    <!ENTITY rides "rides">
+    <!ENTITY ridescap "RIDES">
+    <!ENTITY service "Service">
+    ]>
+<resources>
+
+    <string name="app_name">&appName;</string>
+
+    <!--Google map-->
+
+
+    <!--navigation_drawer-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="waitingForApproval">En attente de vérification par nos services</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="close">Fermer</string>
+
+    <!--Activity Begin-->
+    <string name="get_moving_with_topdrivers">Déplacez-vous avec &appName;</string>
+    <string name="enter_your_mail_id">Entrer votre e-mail</string>
+    <string name="or_connect_with_social_media">Ou se connecter avec Réseaux Sociaux</string>
+
+    <!--Activity Email -->
+    <string name="whats_your_mail_address">Quelle est votre adresse e-mail ?</string>
+    <string name="sample_mail_id">name@exemple.com</string>
+
+    <!--Activity Password -->
+    <string name="welcome_back">Bienvenue, se connecter pour continuer </string>
+    <string name="enter_your_password">Entrer votre mot de passe</string>
+    <string name="i_forgot_my_password">J\'ai oublié mon mot de passe</string>
+    <string name="i_need_to_create_an_account">Je crée un compte</string>
+
+    <!--Activity Register-->
+    <string name="email">Email</string>
+    <string name="name">Nom</string>
+    <string name="phone_number">Téléphone</string>
+    <string name="password">mot de passe</string>
+    <string name="first_name">Prénom</string>
+    <string name="last_name">Nom</string>
+    <string name="commision">Charge de Service</string>
+
+    <string name="time_taken">Temps pris</string>
+    <string name="extra_price">Extra</string>
+
+
+    <string name="mobile_number_validation">Le numéro mobile doit avoir un nombre compris entre 10 et 20 digits</string>
+
+
+    <string name="enter_your_details">Entrer les informations pour vous enregistrer</string>
+
+    <!-- Activity ForgetPassword -->
+    <string name="recover_password">Entrer votre identifiant mail pour récupération</string>
+
+    <!-- Edit Activity-->
+    <string name="edit_profile">Editer Compte</string>
+    <string name="change_password">Changer de mot de passe ?</string>
+    <string name="save">SAVE</string>
+    <string name="update_success">Profile mis à jour.</string>
+
+    <!--Show Dailog-->
+    <string name="connect_to_network">Se connecter au réseau ou quitter</string>
+    <string name="connect_to_wifi">Se connecter au WIFI</string>
+    <string name="quit">Quitter</string>
+    <string name="cancel_ride">Annuler &ride;</string>
+    <string name="view_receipt">Visualiser Reçu</string>
+    <string name="cancel">Annuler</string>
+    <string name="cencel_request">Etes-vous sûr d\'annuler &ride;?</string>
+    <string name="exit_confirm">Etes-vous sûr de vous déconnecter ?</string>
+
+    <!-- Error Messages-->
+    <string name="something_went_wrong">Quelque chose s\'est mal passé</string>
+    <string name="fb_cancel">login Facebook annulé</string>
+    <string name="fb_error">login Facebook  échec</string>
+    <string name="google_login">login Google échec</string>
+    <string name="social_cancel">login Social annulé</string>
+    <string name="registration_failed">Enregistrement annulé</string>
+    <string name="something_went_wrong_net">Quelque chose s\'est mal passé, veuillez vérifier votre connexion internet</string>
+    <string name="oops_connect_your_internet">Oops ! Connecter votre Internet.</string>
+    <string name="server_down">Impossible d\'accéder au réseau</string>
+    <string name="please_try_again">Essayer à nouveau.</string>
+    <string name="email_validation">Entrer votre e-mail</string>
+    <string name="not_valid_email">E-mail ID non valide</string>
+    <string name="password_validation">Le mot de passe ne peut être vide</string>
+    <string name="first_name_empty">Prénom requis</string>
+    <string name="last_name_empty">Nom requis</string>
+    <string name="mobile_number_empty">Numéro Mobile requis</string>
+    <string name="request_reject">Demande rejetée avec succès</string>
+    <string name="request_accept">Demande acceptée avec succès</string>
+    <string name="request_cancel">Vous avez annuler la demande</string>
+    <string name="no_routes_available">Il n\'y a pas de route</string>
+    <string name="write_your_comment">Ecrire un commentaire</string>
+
+    <!--Approval status-->
+
+
+    <string name="waiting_for_approval">En attente d\'approbation</string>
+
+    <!--Wallet Fragment-->
+    <string name="your_wallet_amount">Le montant de votre portefeuille est de</string>
+
+
+
+    <!--Offline Activity -->
+    <string name="go_online">Se connecter</string>
+    <string name="go_offline">Se déconnecter</string>
+
+    <!--Invalid Username and Password-->
+    <string name="invalid_credentials">Nom utilisateur et mot de passe invalide</string>
+
+
+
+    <!--Your Trips-->
+    <string name="history">Historique</string>
+    <string name="comments">Commentaires</string>
+    <string name="no_trips">Aucun trajet disponible</string>
+    <string name="no_upcoming_trips">Pas de trajets à venir disponible</string>
+    <string name="no_rides">Pas de &rides; terminé.</string>
+    <string name="upcoming">A venir</string>
+    <string name="past">Passé</string>
+    <string name="payment_methods">Méthode de paiement</string>
+    <string name="payment_methods_past">Méthode de paiement</string>
+    <string name="sample_name">Will Smith</string>
+
+    <!--Flow status -->
+    <string name="tap_when_arrived">ARRIVÉ</string>
+    <string name="tap_when_pickedup">CHARGÉ</string>
+    <string name="tap_when_dropped">APPUYER QUAND DÉPOSER</string>
+    <string name="tap_when_paid">CONFIRMER PAIEMENT</string>
+    <string name="rate_user">ENVOYER</string>
+    <string name="rate_your_trip">Evaluer votre trajet avec</string>
+
+    <!--Change Password-->
+    <string name="change_password_title">Changer mot de passe</string>
+    <string name="current_password">Mot de passe actuel</string>
+    <string name="new_password">Nouveau mot de passe</string>
+    <string name="confirm_password">Confirmer nouveau mot de passe</string>
+    <string name="please_enter_current_pass">Entrer mot de passe actuel</string>
+    <string name="please_enter_new_pass">Entrer nouveau mot de passe </string>
+    <string name="please_enter_confirm_pass">Confirmer mot de passe</string>
+    <string name="different_passwords">Les mots de passe ne correspondent pas</string>
+
+    <!--Side Navigation Menu -->
+    <string name="home">Accueil</string>
+    <string name="your_trips">Vos trajets</string>
+    <string name="wallet">Portefeuille</string>
+    <string name="help">Aide</string>
+    <string name="earnings">Gains</string>
+    <string name="share">Partager</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="valid_image">Pas d\'image trouvé</string>
+    <string name="user_no_mobile">L\'utilisateur n\'a pas de mobile valide</string>
+    <string name="incorrect_otp">Incorrecte OTP</string>
+    <string name="otp_validation">Champs OTP requis</string>
+    <string name="confirm_password_validation">Mots de passe ne correspondent pas</string>
+    <string name="confirm_validation">Le mot de passe de confirmation doit être supérieur à 6</string>
+    <string name="new_validation">Le nouveau mot de passe doit être supérieur à 6</string>
+    <string name="note">Note : Entrer OTP envoyé sur l\'adresse e-mail enregistré</string>
+    <string name="secrete_code">Entrer OTP</string>
+    <string name="reset_password">Reset mot de passe</string>
+    <string name="request_time_out">Demande écoulé</string>
+    <string name="cancel_confirm">Etes-vous sûr d\'annuler &ride;?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="connect_with_social_media">Ou se connecter avec Réseaux Sociaux</string>
+    <string name="service">&service;</string>
+    <string name="no_services">Pas de service assigné</string>
+    <string name="choose_acc">Choisir un compte</string>
+
+
+    <string name="commission">&service; charge</string>
+    <string name="no_comments">Pas de commentaire disponible</string>
+    <string name="base_price">Tarif de base</string>
+    <string name="distance_price">Tarif Distance</string>
+    <string name="profile">Profile</string>
+    <string name="services_requested">&service; demandé</string>
+    <string name="sos_confirm">Etes-vous sûr d\'appeler les urgences ?</string>
+    <string name="choose_type">Choisir le type</string>
+    <string name="invoice">Facture - </string>
+    <string name="invoice_alone">Facture</string>
+    <string name="pick_up">Lieu départ </string>
+    <string name="drop_at">Lieu destination </string>
+    <string name="reason_to_cancel">Raison d\'annulation</string>
+    <string name="booking_id_colon">Réservation ID : </string>
+    <string name="booking_id">Réservation ID</string>
+    <string name="reason">Raison</string>
+    <string name="submit">Envoyer</string>
+    <string name="summary">Sommaire</string>
+    <string name="total_rides">TOTAL N° de &ridescap;</string>
+    <string name="revenue">REVENU</string>
+    <string name="schedule_rides">N° de différé &ridescap;</string>
+    <string name="canceled_rides">ANNULÉ &ridescap;</string>
+    <string name="rides">Course</string>
+    <string name="upcoming_rides"> &rides; à venir</string>
+    <string name="help_msg">Notre équipe vous contactera prochainement !</string>
+    <string name="no_address">Pas d\'adresse disponible</string>
+    <string name="email_exist">Cette e-mail a déjà été utilisé</string>
+    <string name="first_name_no_number">Prénom n\'accepte pas les chiffres</string>
+    <string name="last_name_no_number">Nom n\'accepte pas les chiffres</string>
+    <string name="password_size">La taille du mot de passe doit être au moins de 6</string>
+    <string name="sorry_for_inconvinent">Désolé pour la gêne, nos assistants sont occcupés actuellement</string>
+    <string name="loading">Chargement&#8230;</string>
+
+
+    <string name="target_completed">Objectif\nTerminé</string>
+    <string name="total_earnings">Total gains</string>
+    <string name="time">Durée</string>
+    <string name="distance">Distance</string>
+    <string name="amount">Montant</string>
+    <string name="drop_address">Adresse destination</string>
+    <string name="where_to">Où ?</string>
+    <string name="user">Utilisateur</string>
+
+
+    <string name="sample">No 10 chennai</string>
+    <string name="call">Appeler</string>
+    <string name="distance_travelled">Distance parcouru</string>
+
+
+    <string name="tax">Taxe</string>
+    <string name="total">Total</string>
+    <string name="amount_to_be_paid">Montant à payer</string>
+    <string name="rate_your_trips">Evaluer votre trajet</string>
+    <string name="server">Serveur indisponible, vérifier plus tard.</string>
+    <string name="timer_start">1</string>
+    <string name="schedule">Planifier</string>
+    <string name="accept">Accepter</string>
+    <string name="reject">Rejeter</string>
+    <string name="upcoming_trips">Trajets à venir</string>
+    <string name="past_trips">Trajets passés</string>
+    <string name="battery">Votre batterie est faible, veuillez charger votre mobile. </string>
+    <string name="new_version_available">Nouvelle version disponible</string>
+    <string name="update_to_continue">Veuillez mettre à jour votre application</string>
+    <string name="update">Mise à jour</string>
+    <string name="no_thanks">Non merci</string>
+    <string name="help_title">&appNameCaps; Aide</string>
+    <string name="new_password_validation">Le nouveau mot de passe doit être différent de l\'ancien</string>
+    <string name="password_validation1">Mot de passe doit contenir minimum 8 caractères, maximum 16 caractères</string>
+    <string name="password_validation2">Mot de passe doit contenir au moins 1 Majuscule, 1 minuscule, 1 Nombre et 1 caratère spécial</string>
+    <string name="today_completed">Objectif atteint aujourd\'hui</string>
+
+    <string name="sign_in">Se connecter</string>
+    <string name="signup">S\'inscrire</string>
+    <string name="fresh">Bienvenue</string>
+    <string name="search">Conduire</string>
+    <string name="bookmark">Gagner</string>
+
+    <string name="fresh_description">Introducing &appName; Services to take rides from the &appNamealone; app users.</string>
+    <string name="search_description">Be your own boss, set your own schedule. Get the latest driving features all in one spot.</string>
+    <string name="bookmark_description">Get well paid to help out strangers get to where they need to go. Withdraw your earnings every week/monthly.</string>
+    <string name="version">Version</string>
+    <string name="user_busy">Your &ride; was cancelled by the user. Please contact us for support</string>
+    <string name="tap_amount_confirm">CONFIRM AMOUNT</string>
+    <string name="confirm_amount">Confirm Amount</string>
+    <string name="enter_confirm_amount">Enter confirm amount</string>
+    <string name="error_confirmation_amount">S\'il vous plaît entrer le montant de la confirmation</string>
+    <string name="gps_issue">Faux GPS détecté</string>
+    <string name="payment_mode">Mode de paiement</string>
+    <string name="pickup_distance">Distance de ramassage</string>
+    <string name="distance_unit">Kms</string>
+</resources>

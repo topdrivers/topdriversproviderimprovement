@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.RideAcceptandRejectActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_01_contentLayer_accept_or_reject_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:weightSum="100">
+
+        <com.topdrivers.driverv2.Utilities.MyTextView
+            android:id="@+id/txt01Timer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/roundimage"
+            android:gravity="center"
+            android:text="@string/timer_start"
+            android:textColor="@color/timer_text_color"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/content_background"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="@dimen/content_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img01User"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:src="@drawable/placeholder_image" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="70"
+                    android:gravity="start|center"
+                    android:orientation="vertical"
+                    android:weightSum="100">
+
+                    <com.topdrivers.driverv2.Utilities.MyTextView
+                        android:id="@+id/txt01UserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="50"
+                        android:textColor="@color/black_text_color"
+                        android:gravity="start|center"
+                        android:text="@string/user"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                    <RatingBar
+                        android:id="@+id/rat01UserRating"
+                        style="?attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_weight="50"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="5" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:id="@+id/txtSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/schedule"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone" />
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="@string/pick_up"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:id="@+id/txtPickup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:minLines="2"
+                android:textColor="@color/black_text_color"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="@string/payment_mode"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:id="@+id/tv_payment_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black_text_color"
+                android:visibility="visible"
+                tools:text="CASH" />
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="@string/pickup_distance"
+                android:textColor="@color/black_text_color"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <com.topdrivers.driverv2.Utilities.MyTextView
+                android:id="@+id/tv_pickup_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black_text_color"
+                android:visibility="visible"
+                tools:text="200" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <com.topdrivers.driverv2.Utilities.MyButton
+                    android:id="@+id/btn_02_reject"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginStart="@dimen/button_margin"
+                    android:layout_marginEnd="@dimen/button_gap"
+                    android:layout_weight="50"
+                    android:background="@color/colorAccent"
+                    android:padding="@dimen/button_padding"
+                    android:text="@string/reject"
+                    android:textColor="@color/button_text_color" />
+
+                <com.topdrivers.driverv2.Utilities.MyButton
+                    android:id="@+id/btn_02_accept"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginStart="@dimen/button_gap"
+                    android:layout_marginEnd="@dimen/button_margin"
+                    android:layout_weight="50"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/button_padding"
+                    android:text="@string/accept"
+                    android:textColor="@color/button_text_color" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
