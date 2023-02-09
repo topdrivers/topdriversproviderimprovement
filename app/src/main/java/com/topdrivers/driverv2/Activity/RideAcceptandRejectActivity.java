@@ -330,9 +330,9 @@ public class RideAcceptandRejectActivity extends AppCompatActivity {
                     // ("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable
                     // .ic_dummy_user).into(img01User);
                     if (user.optString("picture").startsWith("http"))
-                        Picasso.with(RideAcceptandRejectActivity.this).load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img01User);
+                        Picasso.get().load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img01User);
                     else
-                        Picasso.with(RideAcceptandRejectActivity.this).load(URLHelper.base + "storage/" + user.getString(
+                        Picasso.get().load(URLHelper.base + "storage/" + user.getString(
                                 "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img01User);
                 } else {
                     img01User.setImageResource(R.drawable.ic_dummy_user);

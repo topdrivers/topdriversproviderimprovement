@@ -96,7 +96,7 @@ public class BeginScreen extends AppCompatActivity implements GoogleApiClient.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
+        AppEventsLogger.activateApp(getApplication());
         Mint.setApplicationEnvironment(Mint.appEnvironmentStaging);
         Mint.initAndStartSession(this.getApplication(), "764f20aa");
         requestWindowFeature(Window.FEATURE_NO_TITLE);

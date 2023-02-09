@@ -32,8 +32,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.topdrivers.driverv2.BuildConfig;
 import com.topdrivers.driverv2.FCM.ForceUpdateChecker;
@@ -162,17 +161,17 @@ public class SplashScreen extends AppCompatActivity implements ForceUpdateChecke
     public void GetToken() {
         try {
 
-            FirebaseInstanceId.getInstance().getInstanceId()
-                    .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(new OnCompleteListener<String>() {
                         @Override
-                        public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        public void onComplete(@NonNull Task<String> task) {
                             if (!task.isSuccessful()) {
                                 Log.w(TAG, "getInstanceId failed", task.getException());
                                 return;
                             }
 
                             // Get new Instance ID token
-                            device_token = task.getResult().getToken();
+                            device_token = task.getResult();
                             Utilities utils = new Utilities();
                             utils.print(TAG, "device_token " + device_token);
                             SharedHelper.putKey(context, "device_token", device_token);
@@ -186,19 +185,19 @@ public class SplashScreen extends AppCompatActivity implements ForceUpdateChecke
                 device_token = SharedHelper.getKey(context, "device_token");
                 Log.i(TAG, "GCM Registration Token: " + device_token);
             } else {
-                // device_token = "" + FirebaseInstanceId.getInstance().getToken();
-                //  SharedHelper.putKey(context, "device_token", "" + FirebaseInstanceId.getInstance().getToken());
-                FirebaseInstanceId.getInstance().getInstanceId()
-                        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                // device_token = "" + FirebaseMessaging.getInstance().getToken();
+                //  SharedHelper.putKey(context, "device_token", "" + FirebaseMessaging.getInstance().getToken());
+                FirebaseMessaging.getInstance().getToken()
+                        .addOnCompleteListener(new OnCompleteListener<String>() {
                             @Override
-                            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                            public void onComplete(@NonNull Task<String> task) {
                                 if (!task.isSuccessful()) {
                                     Log.w(TAG, "getInstanceId failed", task.getException());
                                     return;
                                 }
 
                                 // Get new Instance ID token
-                                device_token = task.getResult().getToken();
+                                device_token = task.getResult();
                                 Utilities utils = new Utilities();
                                 utils.print(TAG, "device_token " + device_token);
                                 SharedHelper.putKey(context, "device_token", device_token);

@@ -51,7 +51,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme.NoActionBar"
+        >
         <activity
             android:name="com.topdrivers.driverv2.Activity.RideAcceptandRejectActivity"
             android:launchMode="singleInstance"
@@ -68,7 +69,8 @@
         <activity
             android:name="com.topdrivers.driverv2.Activity.SplashScreen"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -162,7 +164,8 @@
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- Firebase Notifications -->
-        <service android:name="com.topdrivers.driverv2.FCM.MyFirebaseMessagingService">
+        <service android:name="com.topdrivers.driverv2.FCM.MyFirebaseMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

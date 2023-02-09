@@ -201,4 +201,19 @@
     <string name="confirm_amount">Confirm Amount</string>
     <string name="enter_confirm_amount">Enter confirm amount</string>
     <string name="error_confirmation_amount">الرجاء إدخال مبلغ التأكيد</string>
+    <string name="gps_issue">Fake GPS detected</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="pickup_distance">Pickup Distance</string>
+    <string name="distance_unit">Kms</string>
+
+
+
+    <!--Activity Phone -->
+    <string name="whats_your_numbner_phone">What\'s your phone number?</string>
+    <string name="enter_your_code">Enter your code verify</string>
+    <string name="phone_validation">Please, Input your phone number</string>
+    <string name="phone_validation_length">Phone number must to than  10 character</string>
+    <string name="verify_code_validation">Please, input verify  code</string>
+    <string name="tv_resend_code">Resend code</string>
+    <string name="tv_verify_code_number">The verify code is send to %s</string>
 </resources>

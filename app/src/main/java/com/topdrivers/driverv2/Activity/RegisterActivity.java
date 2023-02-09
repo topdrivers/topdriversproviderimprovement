@@ -37,7 +37,7 @@ import com.facebook.accountkit.AccountKitLoginResult;
 import com.facebook.accountkit.PhoneNumber;
 import com.facebook.accountkit.ui.AccountKitConfiguration;
 import com.facebook.accountkit.ui.UIManager;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.topdrivers.driverv2.Helper.ConnectionHelper;
 import com.topdrivers.driverv2.Helper.CustomDialog;
 import com.topdrivers.driverv2.Helper.SharedHelper;
@@ -647,8 +647,8 @@ public class RegisterActivity extends AppCompatActivity {
                 device_token = SharedHelper.getKey(context, "device_token");
                 utils.print(TAG, "GCM Registration Token: " + device_token);
             } else {
-                device_token = ""+ FirebaseInstanceId.getInstance().getToken();
-                SharedHelper.putKey(context, "device_token",""+FirebaseInstanceId.getInstance().getToken());
+                device_token = ""+ FirebaseMessaging.getInstance().getToken();
+                SharedHelper.putKey(context, "device_token",""+FirebaseMessaging.getInstance().getToken());
                 utils.print(TAG, "Failed to complete token refresh: " + device_token);
             }
         } catch (Exception e) {

@@ -88,7 +88,7 @@ public class ShowProfile extends AppCompatActivity {
             ratingProvider.setRating(Float.parseFloat(user.getRating()));
         else
             ratingProvider.setRating(1);
-        Picasso.with(context).load(user.getImg()).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(profile_Image);
+        Picasso.get().load(user.getImg()).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(profile_Image);
     }
 
 /*

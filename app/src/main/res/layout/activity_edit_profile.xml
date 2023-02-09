@@ -53,7 +53,7 @@
             app:civ_border_color="#FFFFFF"
             app:civ_border_width="4dp"
             app:civ_shadow="true"
-            app:civ_shadow_radius="10"
+            app:civ_shadow_radius="10dp"
             app:civ_shadow_color="#FFFFFF"/>
 
         <View

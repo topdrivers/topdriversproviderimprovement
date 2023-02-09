@@ -13,6 +13,7 @@
     <string name="app_name">&appName;</string>
 
     <!--Google map-->
+    <string name="google_map_api" translatable="false">AIzaSyBwVbz0Jey3AmJr5nlhjcn1GsjktZ7VDm4</string>
 
 
     <!--navigation_drawer-->
@@ -264,4 +265,14 @@
     <string name="payment_mode">Mode de paiement</string>
     <string name="pickup_distance">Distance de ramassage</string>
     <string name="distance_unit">Kms</string>
+
+
+    <!--Activity Phone -->
+    <string name="whats_your_numbner_phone">Quelle est votre numéro de téléphone?</string>
+    <string name="enter_your_code">Enter votre code de vérification</string>
+    <string name="phone_validation">Veuillez entrer votre numéro de téléphone</string>
+    <string name="phone_validation_length">Phone number must to than  10 character</string>
+    <string name="verify_code_validation">Please, input verify  code</string>
+    <string name="tv_resend_code">Rencvoyer le code</string>
+    <string name="tv_verify_code_number">Le code de vérification est envoyé à %s</string>
 </resources>

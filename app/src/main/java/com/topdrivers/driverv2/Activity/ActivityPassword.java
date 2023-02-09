@@ -24,7 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.topdrivers.driverv2.Helper.ConnectionHelper;
 import com.topdrivers.driverv2.Helper.CustomDialog;
 import com.topdrivers.driverv2.Helper.SharedHelper;
@@ -371,8 +371,8 @@ public class ActivityPassword extends AppCompatActivity {
                 device_token = SharedHelper.getKey(context, "device_token");
                 utils.print(TAG, "GCM Registration Token: " + device_token);
             } else {
-                device_token = ""+ FirebaseInstanceId.getInstance().getToken();
-                SharedHelper.putKey(context, "device_token",""+FirebaseInstanceId.getInstance().getToken());
+                device_token = ""+ FirebaseMessaging.getInstance().getToken();
+                SharedHelper.putKey(context, "device_token",""+FirebaseMessaging.getInstance().getToken());
                 utils.print(TAG, "Failed to complete token refresh: " + device_token);
             }
         } catch (Exception e) {

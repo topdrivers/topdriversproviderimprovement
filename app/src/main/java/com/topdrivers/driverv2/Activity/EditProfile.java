@@ -629,13 +629,13 @@ public class EditProfile extends AppCompatActivity {
         if (!SharedHelper.getKey(context, "picture").equalsIgnoreCase("")
                 && SharedHelper.getKey(context, "picture") != null
                 && !SharedHelper.getKey(context, "picture").equalsIgnoreCase("null")) {
-            Picasso.with(context)
+            Picasso.get()
                     .load(SharedHelper.getKey(context, "picture"))
                     .placeholder(R.drawable.ic_dummy_user)
                     .error(R.drawable.ic_dummy_user)
                     .into(profile_Image);
         } else {
-            Picasso.with(context)
+            Picasso.get()
                     .load(R.drawable.ic_dummy_user)
                     .placeholder(R.drawable.ic_dummy_user)
                     .error(R.drawable.ic_dummy_user)

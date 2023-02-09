@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
         //Assign current profile values to the edittext
         //Glide.with(activity).load(SharedHelper.getKey(context,"picture")).placeholder(R
         // .drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProfile);
-        Picasso.with(context).load(SharedHelper.getKey(context, "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProfile);
+        Picasso.get().load(SharedHelper.getKey(context, "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(imgProfile);
 
     }
 

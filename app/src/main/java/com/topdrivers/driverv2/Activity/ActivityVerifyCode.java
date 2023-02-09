@@ -35,7 +35,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.iid.FirebaseInstanceId;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.topdrivers.driverv2.Helper.ConnectionHelper;
 import com.topdrivers.driverv2.Helper.CustomDialog;
 import com.topdrivers.driverv2.Helper.SharedHelper;
@@ -220,8 +221,8 @@ public class ActivityVerifyCode extends AppCompatActivity {
             if (!SharedHelper.getKey(context, "device_token").equals("") && SharedHelper.getKey(context, "device_token") != null) {
                 device_token = SharedHelper.getKey(context, "device_token");
             } else {
-                device_token = "" + FirebaseInstanceId.getInstance().getToken();
-                SharedHelper.putKey(context, "device_token", "" + FirebaseInstanceId.getInstance().getToken());
+                device_token = "" + FirebaseMessaging.getInstance().getToken();
+                SharedHelper.putKey(context, "device_token", "" + FirebaseMessaging.getInstance().getToken());
             }
         } catch (Exception e) {
             device_token = "COULD NOT GET FCM TOKEN";

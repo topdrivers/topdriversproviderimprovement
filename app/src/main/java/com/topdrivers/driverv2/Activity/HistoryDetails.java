@@ -256,9 +256,9 @@ public class HistoryDetails extends AppCompatActivity {
                 paymentTypeImg.setImageResource(R.drawable.visa_icon);
             }
             if (response.optJSONObject(0).optJSONObject("user").optString("picture").startsWith("http"))
-                Picasso.with(activity).load(response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
+                Picasso.get().load(response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
             else
-                Picasso.with(activity).load(URLHelper.base + "storage/" + response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
+                Picasso.get().load(URLHelper.base + "storage/" + response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
             final JSONArray res = response;
             tripProviderImg.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -354,9 +354,9 @@ public class HistoryDetails extends AppCompatActivity {
                         paymentTypeImg.setImageResource(R.drawable.visa_icon);
                     }
                     if (response.optJSONObject(0).optJSONObject("user").optString("picture").startsWith("http"))
-                        Picasso.with(activity).load(response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
+                        Picasso.get().load(response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
                     else
-                        Picasso.with(activity).load(URLHelper.base + "storage/" + response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
+                        Picasso.get().load(URLHelper.base + "storage/" + response.optJSONObject(0).optJSONObject("user").optString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(tripProviderImg);
                     final JSONArray res = response;
                     tripProviderImg.setOnClickListener(new View.OnClickListener() {
                         @Override

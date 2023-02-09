@@ -59,6 +59,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -517,7 +518,7 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
             public void onClick(View view) {
                 try {
                     if (NAV_DRAWER == 0) {
-                        drawer.openDrawer(Gravity.START);
+                        drawer.openDrawer(GravityCompat.START);
                     } else {
                         NAV_DRAWER = 0;
                         drawer.closeDrawers();
@@ -1521,10 +1522,12 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
 
                     }
                 }
+                System.out.println("---------crtlat----------"+crt_lat);
+                System.out.println("---------crtlng----------"+crt_lng);
 
                 String url = URLHelper.base + "api/provider/trip?latitude=" + crt_lat +
                         "&longitude=" + crt_lng;
-
+                System.out.println("------------url----------"+url);
                 utils.print("Destination Current Lat", "" + crt_lat);
                 utils.print("Destination Current Lng", "" + crt_lng);
                 /*if (jsonObjectRequest != null) {
@@ -1597,6 +1600,7 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                                                 stopForegroundService();
                                                 goOffline();
                                             } else {
+
                                                 startForegroundService();
                                                 if (response.optJSONArray("requests") != null && response.optJSONArray("requests").length() > 0) {
                                                     JSONObject statusResponse = null;
@@ -1921,7 +1925,7 @@ String ss=txt01Timer.getText().toString();
                                                                             statusResponse.optJSONObject(
                                                                                     "payment").optString(
                                                                                     "payable");
-                                                                    confirmAmount("DROPPED",
+                                                                    confirmAmount("COMPLETED",
                                                                             request_id, amount);
                                                                 } else {
                                                                     PreviousStatus = "";
@@ -1963,6 +1967,7 @@ String ss=txt01Timer.getText().toString();
                                                                     && statusResponse.optString(
                                                                     "paid").equals("0"
                                                             ) && payMode.equalsIgnoreCase("CARD")) {
+
                                                                 setValuesTo_ll_04_contentLayer_payment(statusResponses);
                                                                 if (ll_04_contentLayer_payment.getVisibility() == View.GONE) {
                                                                     ll_04_contentLayer_payment.startAnimation(slide_up);
@@ -2234,6 +2239,7 @@ String ss=txt01Timer.getText().toString();
                                                         //    openArrivedScreen = false;
                                                         isFromResume = false;
                                                     }
+
                                                 }
                                             }
                                         }
@@ -2408,9 +2414,9 @@ String ss=txt01Timer.getText().toString();
                     // ("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable
                     // .ic_dummy_user).into(img01User);
                     if (user.optString("picture").startsWith("http"))
-                        Picasso.with(context).load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img01User);
+                        Picasso.get().load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img01User);
                     else
-                        Picasso.with(context).load(URLHelper.base + "storage/" + user.getString(
+                        Picasso.get().load(URLHelper.base + "storage/" + user.getString(
                                 "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img01User);
                 } else {
                     img01User.setImageResource(R.drawable.ic_dummy_user);
@@ -2463,14 +2469,14 @@ String ss=txt01Timer.getText().toString();
                 // .ic_dummy_user).into(img03User);
                 if (user.optString("picture").startsWith("http")) {
                     try {
-                        Picasso.with(context).load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img03User);
+                        Picasso.get().load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img03User);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 } else {
                     try {
-                        Picasso.with(context).load(URLHelper.base + "storage/" + user.getString(
+                        Picasso.get().load(URLHelper.base + "storage/" + user.getString(
                                 "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img03User);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -2536,14 +2542,14 @@ String ss=txt01Timer.getText().toString();
                 // .ic_dummy_user).into(img03User);
                 if (user.optString("picture").startsWith("http")) {
                     try {
-                        Picasso.with(context).load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img03User);
+                        Picasso.get().load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img03User);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 } else {
                     try {
-                        Picasso.with(context).load(URLHelper.base + "storage/" + user.getString(
+                        Picasso.get().load(URLHelper.base + "storage/" + user.getString(
                                 "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img03User);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -2619,9 +2625,9 @@ String ss=txt01Timer.getText().toString();
                         // ("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable
                         // .ic_dummy_user).into(img03User);
                         if (user.optString("picture").startsWith("http"))
-                            Picasso.with(context).load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img04User);
+                            Picasso.get().load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img04User);
                         else
-                            Picasso.with(context).load(URLHelper.base + "storage/" + user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img04User);
+                            Picasso.get().load(URLHelper.base + "storage/" + user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img04User);
                     } else {
                         img04User.setImageResource(R.drawable.ic_dummy_user);
                     }
@@ -2670,9 +2676,9 @@ String ss=txt01Timer.getText().toString();
                     // ("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable
                     // .ic_dummy_user).into(img05User);
                     if (user.optString("picture").startsWith("http"))
-                        Picasso.with(context).load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img05User);
+                        Picasso.get().load(user.getString("picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img05User);
                     else
-                        Picasso.with(context).load(URLHelper.base + "storage/" + user.getString(
+                        Picasso.get().load(URLHelper.base + "storage/" + user.getString(
                                 "picture")).placeholder(R.drawable.ic_dummy_user).error(R.drawable.ic_dummy_user).into(img05User);
                 } else {
                     img05User.setImageResource(R.drawable.ic_dummy_user);
@@ -2749,7 +2755,7 @@ String ss=txt01Timer.getText().toString();
         customDialog.setCancelable(false);
         customDialog.show();
 
-        // if (status.equals("ONLINE"))
+         //if (status.equals("ONLINE"))
         {
             JSONObject param = new JSONObject();
             try {
@@ -2845,9 +2851,11 @@ String ss=txt01Timer.getText().toString();
             TopdriversApplication.getInstance().addToRequestQueue(jsonObjectRequest);
         } else*/
         {
+            System.out.println("----------------id-------------"+id);
             TopdriversApplication.getInstance().getRequestQueue().cancelAll("checkStatus");
             String url;
             JSONObject param = new JSONObject();
+            System.out.println("-----------status------------"+status);
             if (status.equals("RATE")) {
                 url = URLHelper.base + "api/provider/trip/" + id + "/rate";
                 try {
@@ -2862,6 +2870,7 @@ String ss=txt01Timer.getText().toString();
                 try {
                     param.put("_method", "PATCH");
                     if (status.equals("DROPPED")) {
+                        System.out.println("---------------dropped----------"+givenTotalAmount);
                         param.put("total_amount_given", givenTotalAmount);
                     }
                     param.put("status", status);
@@ -2873,9 +2882,11 @@ String ss=txt01Timer.getText().toString();
                     if (CurrentStatus.equalsIgnoreCase("PICKEDUP") || CurrentStatus.equalsIgnoreCase("DROPPED")) {
                         param.put("latitude", crt_lat);
                         param.put("longitude", crt_lng);
-                        // param.put("status",  CurrentStatus);
+                        System.out.println("---------params---------"+param.toString());
+                        //param.put("status",  CurrentStatus);
                     }
                     Log.d("params", param.toString());
+                    System.out.println("---------params---------"+param.toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -2890,10 +2901,13 @@ String ss=txt01Timer.getText().toString();
                     }
 
                     customDialog.dismiss();
+                    System.out.println("-----------response-----------"+response);
                     if (response.optJSONObject("requests") != null) {
+
                         utils.print("request", response.optJSONObject("requests").toString());
                     }
                     if (status.equals("RATE")) {
+                        System.out.println("------dropped--------");
                         clearVisibility();
                         lnrGoOffline.setVisibility(View.VISIBLE);
                         destinationLayer.setVisibility(View.GONE);
@@ -2919,6 +2933,7 @@ String ss=txt01Timer.getText().toString();
                         lnrGoOffline.setVisibility(View.VISIBLE);
                         destinationLayer.setVisibility(View.GONE);
                     }
+                    System.out.println("------------ERROR----------------");
                     //errorHandler(error);
                 }
             }) {
@@ -3218,6 +3233,7 @@ String ss=txt01Timer.getText().toString();
                         try {
                             customDialog.dismiss();
                         } catch (Exception e) {
+                            e.printStackTrace();
                             e.printStackTrace();
                         }
                         {
