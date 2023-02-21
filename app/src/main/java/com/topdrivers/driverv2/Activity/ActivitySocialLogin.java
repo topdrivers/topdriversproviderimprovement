@@ -124,8 +124,14 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+/*
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(getApplication());
+
+ */
+
+
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_social);
         helper = new ConnectionHelper(ActivitySocialLogin.this);
@@ -133,7 +139,7 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
 
         GetToken();
 
-        facebook_layout = (LinearLayout) findViewById(R.id.facebook_layout);
+        //facebook_layout = (LinearLayout) findViewById(R.id.facebook_layout);
         google_layout = (LinearLayout) findViewById(R.id.google_layout);
         backArrow = (ImageView) findViewById(R.id.backArrow);
 
@@ -174,28 +180,8 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
 
         callbackManager = CallbackManager.Factory.create();
 
-        try {
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        try {
-            @SuppressLint("PackageManagerGetSignatures") PackageInfo info = getPackageManager().getPackageInfo(
-                    Build.ID,
-                    PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException ignored) {
-
-        }
-
 //        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
-
+/*
         facebook_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -222,18 +208,18 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
 
                                 @Override
                                 public void onCancel() {
-                                    // App code
+                                     App code
                                     displayMessage(getString(R.string.fb_cancel));
                                 }
 
                                 @Override
                                 public void onError(FacebookException exception) {
-                                    // App code
+                                     App code
                                     displayMessage(getString(R.string.fb_error));
                                 }
                             });
                 } else {
-                    //mProgressDialog.dismiss();
+                    mProgressDialog.dismiss();
                     AlertDialog.Builder builder = new AlertDialog.Builder(ActivitySocialLogin.this);
                     builder.setMessage("Check your Internet").setCancelable(false);
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -256,6 +242,8 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
             }
         });
 
+
+
         accessTokenTracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken,
@@ -264,7 +252,12 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
                 // currentAccessToken when it's loaded or set.
             }
         };
+
+ */
+
+
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -668,7 +661,7 @@ public class ActivitySocialLogin extends AppCompatActivity implements GoogleApiC
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        accessTokenTracker.stopTracking();
+//        accessTokenTracker.stopTracking();
     }
 
     @Override

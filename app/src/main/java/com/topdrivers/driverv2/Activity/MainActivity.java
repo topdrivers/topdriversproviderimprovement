@@ -445,6 +445,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void enableLoc() {
+        System.out.println("------------enableLoc-------------");
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {

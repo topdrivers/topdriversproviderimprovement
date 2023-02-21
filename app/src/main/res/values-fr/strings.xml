@@ -15,7 +15,10 @@
     <!--Google map-->
     <string name="google_map_api" translatable="false">AIzaSyBwVbz0Jey3AmJr5nlhjcn1GsjktZ7VDm4</string>
 
-
+    <!-- Facebook ID and Account Kit ID  -->
+    <string name="facebook_app_id" translatable="false">342765483682421</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb342765483682421</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN" translatable="false">745a3dce97e2446c10078154291b395f</string>
     <!--navigation_drawer-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

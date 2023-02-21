@@ -477,6 +477,7 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                 if (mPlayer != null && mPlayer.isPlaying()) {
                    /* mPlayer.stop();
                     mPlayer = null;*/
+                    System.out.println("------------playng----------");
                     stopPlaying();
                 }
 
@@ -1187,6 +1188,15 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
 
     }
 
+
+
+
+
+
+
+
+
+
     @Override
     public void onLocationChanged(Location location) {
 
@@ -1372,6 +1382,10 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
         }
     }
 
+
+
+
+
     private String downloadUrl(String strUrl) throws IOException {
         String data = "";
         InputStream iStream = null;
@@ -1539,7 +1553,7 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                                 new Response.Listener<JSONObject>() {
                                     @Override
                                     public void onResponse(JSONObject response) {
-
+                                        System.out.println("--------------response-firsst-------------"+response);
 
                                         try {
                                             SharedHelper.putKey(context, "accountStatus",
@@ -1553,6 +1567,7 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                                                 if (jsonObject != null) {
                                                     user.setFirstName(jsonObject.optString(
                                                             "first_name"));
+                                                    System.out.println("-----------usergetfirstname------"+user.getFirstName());
                                                     user.setLastName(jsonObject.optString(
                                                             "last_name"));
                                                     user.setEmail(jsonObject.optString("email"));
@@ -1681,6 +1696,7 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                                                             ).equalsIgnoreCase(
                                                                     "SEARCHING")) {
                                                                 timerCompleted = false;
+
                                                                 if (mPlayer != null && mPlayer.isPlaying()) {
                                                                    /* mPlayer.stop();
                                                                     mPlayer = null;*/
@@ -1690,26 +1706,31 @@ public class Map extends Fragment implements OnMapReadyCallback, LocationListene
                                                             }
                                                             if (statusResponse.optString("status").equalsIgnoreCase(
                                                                     "SEARCHING")) {
-                                                               /* if (countDownTimer == null && ll_01_contentLayer_accept_or_reject_now.getVisibility() == View.GONE) {
+                                                                //timerCompleted = true;
+                                                                if (countDownTimer == null && ll_01_contentLayer_accept_or_reject_now.getVisibility() == View.GONE) {
                                                                 scheduleTrip = false;
                                                                 if (!timerCompleted ) {
 String ss=txt01Timer.getText().toString();
-                                                                    if (ll_01_contentLayer_accept_or_reject_now.getVisibility() == View.GONE *//*&& (txt01Timer.getText().toString().equalsIgnoreCase("1")||txt01Timer.getText().toString().equalsIgnoreCase("0"))*//*) {
+                                                                    if (ll_01_contentLayer_accept_or_reject_now.getVisibility() == View.GONE && (txt01Timer.getText().toString().equalsIgnoreCase("1")||txt01Timer.getText().toString().equalsIgnoreCase("0"))) {
                                                                         ll_01_contentLayer_accept_or_reject_now.startAnimation(slide_up);
                                                                         ll_01_contentLayer_accept_or_reject_now.setVisibility(View.VISIBLE);
                                                                         setValuesTo_ll_01_contentLayer_accept_or_reject_now(statusResponses);
                                                                     }
-
-                                                                       *//* getActivity().runOnUiThread(new Runnable() {
+/*
+                                                                        getActivity().runOnUiThread(new Runnable() {
                                                                             @Override
 
                                                                             public void run() {
 
                                                                             }
                                                                         });
-*//*
+
+ */
+
+
+
                                                                 }
-                                                                 }*/
+                                                                 }
 
                                                                 try {
                                                                     //if (countDownTimer == null && ll_01_contentLayer_accept_or_reject_now.getVisibility() == View.GONE) {
@@ -1726,6 +1747,14 @@ String ss=txt01Timer.getText().toString();
                                                                         intent.putExtra("statusResponses", statusResponses.toString());
                                                                         intent.putExtra("requestId", request_id);
                                                                         getActivity().startActivity(intent);
+                                                                        mPlayer = MediaPlayer.create(context, R.raw.alert_tone);
+                                                                                    mPlayer.start();
+                                                                                    timerCompleted = true;
+
+
+
+                                                                    }else{
+                                                                        mPlayer.stop();
                                                                     }
                                                                     /*if (!timerCompleted *//*&& mPlayer.isPlaying()*//*) {
 
@@ -2348,7 +2377,7 @@ String ss=txt01Timer.getText().toString();
             public void onTick(long millisUntilFinished) {
                 try {
                     txt01Timer.setText("" + millisUntilFinished / 1000);
-
+                    System.out.println("-----------notif------------");
                     if (mPlayer == null) {
                         mPlayer = MediaPlayer.create(context, R.raw.alert_tone);
 
@@ -2867,6 +2896,7 @@ String ss=txt01Timer.getText().toString();
                 utils.print("Input", param.toString());
             } else {
                 url = URLHelper.base + "api/provider/trip/" + id;
+                System.out.println("------------id------------"+id);
                 try {
                     param.put("_method", "PATCH");
                     if (status.equals("DROPPED")) {
@@ -2915,7 +2945,7 @@ String ss=txt01Timer.getText().toString();
                                 Double.parseDouble(crt_lng));
                         CameraPosition cameraPosition =
                                 new CameraPosition.Builder().target(myLocation).zoom(17).build();
-                        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                         mapClear();
 
                         Intent mainIntent = new Intent(activity, MainActivity.class);
@@ -3099,7 +3129,9 @@ String ss=txt01Timer.getText().toString();
             customDialog = new CustomDialog(activity);
             customDialog.setCancelable(false);
             customDialog.show();
+            System.out.println("---------------disfinishing-------------------");
         }
+        System.out.println("---------------dhandleincoming-------------------");
         TopdriversApplication.getInstance().getRequestQueue().cancelAll("checkStatus");
         String url = URLHelper.base + "api/provider/trip/" + id;
         if (status.equals("Accept")) {
@@ -3111,12 +3143,16 @@ String ss=txt01Timer.getText().toString();
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
+                        System.out.println("---------------dismiss previuos-------------------");
                         try {
                             customDialog.dismiss();
+                            System.out.println("---------------dismiss-------------------");
                         } catch (Exception e) {
+                            System.out.println("---------------dismiss exception-------------------");
                             e.printStackTrace();
                         }
                         if (status.equals("Accept")) {
+                            System.out.println("-----------accept ride------------");
                             Toast.makeText(context,
                                     context.getResources().getString(R.string.request_accept),
                                     Toast.LENGTH_SHORT).show();
